@@ -9,8 +9,9 @@ async function bootstrap() {
         .then(() => {
         console.log('Servidor funcionando corretamente.');
     })
-        .catch(() => {
-        console.log('Ocorreu algum problema no servidor.');
+        .catch((error) => {
+        console.error(error);
+        throw new Error('Ocorreu algum problema no servidor.');
     });
 }
 bootstrap();
